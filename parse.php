@@ -543,6 +543,10 @@ class Parser extends Tokenizer
 				}
 			}
 		}
+        if(strlen($doc['brief']))    
+        {
+            $doc['brief'] = str_replace("\n", ' ', $doc['brief']);
+        }
 		if(isset($doc['param']))
 		{
 			$this->fixParam($doc);

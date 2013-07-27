@@ -176,7 +176,7 @@ class GenDoc extends CommandLine
 		foreach($packages as $name => $package)
 		{
 			$md = new GenMarkdown();
-			$md->generatePackage($name, $package, $this->options['output']['flag'] . '/markdown');
+			$md->generatePackage($name, $package, $this->options['output']['flag']);
 		}
 	}
 
@@ -221,7 +221,7 @@ class GenDoc extends CommandLine
 		$module = Parser::tokenizeFile($filename);
 		$module->cascadeAttributes($global, $relPath);
 		$md = new GenMarkdown();
-		$md->generateFrom($module, $this->options['output']['flag'] . '/markdown');
+		$md->generateFrom($module, $this->options['output']['flag']);
 		return $module;
 	}
 }
